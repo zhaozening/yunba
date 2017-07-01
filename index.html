@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Title</title>
+    <link rel="icon" href="images/logo_chrome.ico">
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href="js/animate.min.css">
+    <link rel="stylesheet" href="js/bootstrap.min.css">
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="js/swiper.animate1.0.2.min.js"></script>
+    <script src="js/swiper-3.4.2.jquery.min.js"></script>
+    <link rel="stylesheet" href="js/swiper-3.4.2.min.css">
+    <script src="js/swiper-3.4.2.min.js"></script>
+    <script src="js/zepto.min.js"></script>
+    <style>
+        .pointer li{
+            border: 1px solid gray;
+        }
+        .pointer .active{
+            background: #ccc;
+        }
+        .wrap{
+            margin-top: 150px;
+            text-align: center;
+
+            position: relative;
+            overflow: hidden;
+        }
+
+
+        @media screen and (min-width: 768px) {
+            .banner{height: 200px;}
+            .desc{
+                position: relative;
+                top:170px;
+                text-align: right;
+                z-index: 111;
+            }
+        }
+        @media screen and (max-width: 768px) {
+            .banner{height: 250px;}
+            .desc{position: static}
+        }
+        .position{
+            position: absolute;
+            top: -150px;
+            left:0;
+            animation: rotate 180s linear infinite;
+        }
+        @keyframes rotate {
+            0%{transform: rotate(0deg)}
+            100%{transform: rotate(360deg)}
+        }
+        .carousel-inner>.item{
+            text-align: center;
+            height: 200px;
+        }
+
+        .col-md-3{
+
+        }
+        .well img:hover{
+            transform: rotate(20deg);
+        }
+        .hhh h3{
+            height: 30px;
+            background: -webkit-linear-gradient(left,#03a2dc 0%,#00d0ef 100%);
+            color: white;
+        }
+        .hhh>div p{
+            line-height: 30px;
+            width: 80%;
+            margin:  0 auto;
+        }
+
+    </style>
+</head>
+<body>
+<!--导航条-->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="glyphicon glyphicon-chevron-down"></span>
+            </button>
+            <a class="navbar-brand" href="#"><img src="images/logo3.png" alt=""></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">快速入门<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">One more separated link</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">产品介绍</a></li>
+                <li><a href="#">价格</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">开发者资源<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">One more separated link</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">用户案例</a></li>
+                <li><a href="#">博客</a></li>
+            </ul>
+            <form class="navbar-form navbar-left">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="搜索">
+                    <span class="input-group-btn">
+        <button class="btn btn-default" type="button">搜索</button>
+      </span>
+                </div><!-- /input-group -->
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">登陆</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">注册<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+
+<!--中间-->
+<div class="wrap">
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+        <ol class="carousel-indicators pointer">
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        </ol>
+    <!-- Wrapper for slides -->
+        <div class="carousel-inner banner" role="listbox">
+            <div class="item active">
+                <h2>App,Web、物联网实时通讯云服务</h2>
+                <p>专注于为需要实时数据交换的产品提供完美解决方案</p>
+                <p>支持包括手机、Web、智能设备的几乎所有平台。</p>
+                <a href="" class="link link-play">开启一键推送</a>
+            </div>
+            <div class="item">
+                <h2>App、Web、无线网实时通讯云服务</h2>
+                <p>集成云巴 SDK，轻松实现视频直播交互功能。</p>
+                <a href="" class="link link-play">请开始使用</a>
+            </div>
+            <div class="item">
+                <h2>App、Web、无线网实时通讯云服务</h2>
+                <p>集成云巴 SDK，轻松实现视频直播交互功能。</p>
+                <a href="" class="link link-play">请开始使用</a>
+            </div>
+        </div>
+    </div>
+    <!--固定宽度的容器-->
+    <div class="container">
+        <img class="img-responsive" src="images/home.png" alt="">
+    </div>
+    <div class="container position">
+        <img class="rotate-img img-responsive" src="images/1020px.png" alt="">
+    </div>
+</div>
+
+<!--主体-->
+<section class="container">
+    <div class="col-md-6 col-xs-12 col-md-offset-6 desc">
+        <h1>云巴<sup>TM</sup>助你打造最佳实时通讯</h1>
+        <p>基于云巴的的消息系统</p>
+        <p>你可以轻松实现跨手机、浏览器、智能设备的实时通讯</p>
+        <p>开发、部署大规模实时应用</p>
+    </div>
+    <div class="col-md-12 col-xs-12">
+        <img src="images/introduce.jpg" alt="" class="img-responsive">
+    </div>
+</section>
+
+
+<div class="well">
+    <div class="container">
+        <h2 style="text-align: center;margin-bottom: 50px">产品主要功能</h2>
+        <div class="row">
+            <div class="col-md-3 col-xs-6">
+                <img src="images/push.png" alt="" class="img-responsive">
+                <p>消息推送</p>
+                <p>Push Notification</p>
+            </div>
+            <div class="col-md-3 col-xs-6">
+                <img src="images/msg.png" alt="" class="img-responsive">
+                <p>实时消息</p>
+                <p>Realtime Messaging</p>
+            </div>
+            <div class="col-md-3 col-xs-6">
+                <img src="images/stat.png" alt="" class="img-responsive">
+                <p>实时统计</p>
+                <p>Analytics</p>
+            </div>
+            <div class="col-md-3 col-xs-6">
+                <img src="images/user.png" alt="" class="img-responsive">
+                <p>实时在线</p>
+                <p>Presence</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="container">
+    <h2 style="color: #007aff">云巴示例和案例</h2>
+    <p>我们为移动应用以及智能设备开发提供后端云服务，助你打造最佳实时应用</p>
+    <div class="row hhh">
+        <div class="col-md-4" style="text-align: center" >
+            <h3>田园科技</h3>
+            <img src="images/case-live-video.png" alt="" class="img-responsive" style="margin: 0 auto">
+            <p>借助云巴的第三方直播互动技术，直播平台可快速实现弹幕、打赏、点赞、点爱心等直播互动功能</p>
+        </div>
+        <div class="col-md-4" style="text-align: center" >
+            <h3>田园科技</h3>
+            <img src="images/case-live-video.png" alt="" class="img-responsive" style="margin: 0 auto">
+            <p>借助云巴的第三方直播互动技术，直播平台可快速实现弹幕、打赏、点赞、点爱心等直播互动功能</p>
+        </div>
+        <div class="col-md-4" style="text-align: center" >
+            <h3>田园科技</h3>
+            <img src="images/case-live-video.png" alt="" class="img-responsive" style="margin: 0 auto">
+            <p>借助云巴的第三方直播互动技术，直播平台可快速实现弹幕、打赏、点赞、点爱心等直播互动功能</p>
+        </div>
+    </div>
+    <div class="row hhh">
+        <div class="col-md-4" style="text-align: center" >
+            <h3>田园科技</h3>
+            <img src="images/case-live-video.png" alt="" class="img-responsive" style="margin: 0 auto">
+            <p>借助云巴的第三方直播互动技术，直播平台可快速实现弹幕、打赏、点赞、点爱心等直播互动功能</p>
+        </div>
+        <div class="col-md-4" style="text-align: center" >
+            <h3>田园科技</h3>
+            <img src="images/case-live-video.png" alt="" class="img-responsive" style="margin: 0 auto">
+            <p>借助云巴的第三方直播互动技术，直播平台可快速实现弹幕、打赏、点赞、点爱心等直播互动功能</p>
+        </div>
+        <div class="col-md-4" style="text-align: center" >
+            <h3>田园科技</h3>
+            <img src="images/case-live-video.png" alt="" class="img-responsive" style="margin: 0 auto">
+            <p>借助云巴的第三方直播互动技术，直播平台可快速实现弹幕、打赏、点赞、点爱心等直播互动功能</p>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container">
+    <h1 style="text-align: center"><span style="border-bottom: 2px solid #00d0ef">媒体报道</span></h1>
+    <div class="row">
+        <div class="col-md-4">
+            <img src="images/leiphone.jpg" alt="" class="img-responsive">
+            <a href="#" style="color: #00d0ef;font-size: 20px">第三方推送已死</a>
+            <p style="line-height: 30px">主流的 Android 手机现在会自动清理后台，禁止服务自动拉起，以前第三方推送服务商的各种 SDK 保活手段相继失效，云巴一键集成厂商的推送服务解决难题。</p>
+        </div>
+        <div class="col-md-4">
+            <img src="images/leiphone.jpg" alt="" class="img-responsive">
+            <a href="#" style="color: #00d0ef;font-size: 20px">第三方推送已死</a>
+            <p style="line-height: 30px">主流的 Android 手机现在会自动清理后台，禁止服务自动拉起，以前第三方推送服务商的各种 SDK 保活手段相继失效，云巴一键集成厂商的推送服务解决难题。</p>
+        </div>
+        <div class="col-md-4">
+            <img src="images/leiphone.jpg" alt="" class="img-responsive">
+            <a href="#" style="color: #00d0ef;font-size: 20px">第三方推送已死</a>
+            <p style="line-height: 30px">主流的 Android 手机现在会自动清理后台，禁止服务自动拉起，以前第三方推送服务商的各种 SDK 保活手段相继失效，云巴一键集成厂商的推送服务解决难题。</p>
+        </div>
+    </div>
+    <p style="text-align: center"><button type="button" class="btn btn-primary btn-lg">查看更多</button></p>
+</div>
+
+
+
+
+
+
+<footer class="container">
+
+</footer>
+
+
+
+
+
+
+
+
+</body>
+</html>
